@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<List xmlns:ows="Microsoft SharePoint" Title="TaskList" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/TaskList" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+  <MetaData>
+    <ContentTypes>
+      
+      
+    <ContentType ID="0x01000287f8e8052c4c3eb602df5287a0ebdb" Name="ListFieldsContentType"><FieldRefs><FieldRef ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Name="Title" /><FieldRef ID="{64cd368d-2f95-4bfc-a1f9-8d4324ecb007}" Name="StartDate" /><FieldRef ID="{8A121252-85A9-443d-8217-A1B57020FADF}" Name="_EndDate" /><FieldRef ID="{1DAB9B48-2D1A-47b3-878C-8E84F0D211BA}" Name="_Status" /><FieldRef ID="{08336e68-1761-4d4d-a485-ab9e652275a2}" Name="Contr" /></FieldRefs></ContentType><ContentTypeRef ID="0x01">
+        <Folder TargetName="Item" />
+      </ContentTypeRef><ContentTypeRef ID="0x0120" /></ContentTypes>
+    <Fields>
+      
+    <Field ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" Type="Text" Name="Title" DisplayName="Task name" Required="TRUE" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="Title" MaxLength="255" /><Field ID="{64cd368d-2f95-4bfc-a1f9-8d4324ecb007}" Name="StartDate" SourceID="http://schemas.microsoft.com/sharepoint/v3" StaticName="StartDate" Group="$Resources:core,Base_Columns;" Type="DateTime" Format="DateTime" DisplayName="$Resources:core,Start_Date;" DelayActivateTemplateBinding="GROUP,SPSPERS,SITEPAGEPUBLISHING" Required="TRUE"><Default>[today]</Default></Field><Field ID="{8A121252-85A9-443d-8217-A1B57020FADF}" Name="_EndDate" Group="$Resources:core,Base_Columns;" Type="DateTime" DisplayName="$Resources:core,End_Date;" Format="DateTime" SourceID="http://schemas.microsoft.com/sharepoint/v3/fields" StaticName="_EndDate" Required="TRUE"><Default>[today]</Default></Field><Field ID="{1DAB9B48-2D1A-47b3-878C-8E84F0D211BA}" Name="_Status" Group="$Resources:core,Document_Columns;" Type="Choice" DisplayName="$Resources:core,Status;" SourceID="http://schemas.microsoft.com/sharepoint/v3/fields" StaticName="_Status" FillInChoice="FALSE" Required="TRUE"><CHOICES><CHOICE>Awaiting execution</CHOICE><CHOICE>On execution</CHOICE><CHOICE>Completed</CHOICE><CHOICE>Marked for improvement</CHOICE><CHOICE></CHOICE><CHOICE></CHOICE><CHOICE></CHOICE></CHOICES><Default>$Resources:core,_Status_NotStarted;</Default></Field><Field Name="Contr" ID="{08336e68-1761-4d4d-a485-ab9e652275a2}" DisplayName="Contractor Name" Type="User" Required="TRUE" List="UserInfo" /></Fields>
+    <Views>
+      
+      
+    <View BaseViewID="0" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+        <Toolbar Type="Standard" />
+        <XslLink Default="TRUE">main.xsl</XslLink>
+        <JSLink>clienttemplates.js</JSLink>
+        <RowLimit Paged="TRUE">30</RowLimit>
+        <ViewFields>
+          
+        <FieldRef Name="LinkTitle"></FieldRef><FieldRef Name="Contr" /><FieldRef Name="_Status" /></ViewFields>
+        <Query>
+          <OrderBy>
+            
+          <FieldRef Name="ID"></FieldRef></OrderBy>
+        </Query>
+        <ParameterBindings>
+          <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+          <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+        </ParameterBindings>
+      </View></Views>
+    <Forms>
+      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+    </Forms>
+  </MetaData>
+</List>
